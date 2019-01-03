@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print Range Using Do while</title>
+
+	<script type="text/javascript">
+		var inputNum = parseInt(prompt("Enter Number!","0-100"));
+
+		if(inputNum>100){
+			document.write("Entered Number "+inputNum+" is not an valid number. Expected values should between 0-100");
+		
+		}
+		else{
+
+			document.write("Entered Number was : "+inputNum+". Following is the range iterations which starts from zero!" + "<br/> <br/> <br/>");
+
+			var i = 0;
+
+			do{
+				document.write("Iteration : "+i+"<br/>");
+				i++;
+			}while(i<=inputNum);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

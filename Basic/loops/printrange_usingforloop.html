@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print Range From 0 to Entered Number!</title>
+
+	<script type="text/javascript">
+
+		var rangeEndInputNum = parseInt(prompt("Enter Range End Number!", "0-100"));
+
+		if(rangeEndInputNum>100){
+			document.write("Entered Number "+rangeEndInputNum+" is not an valid number. Expected values should between 0-100");
+		}
+		else{
+			document.write("Entered Number was : "+rangeEndInputNum+". Following is the range iterations which starts from zero!" + "<br/> <br/> <br/>");
+			for(var i=0;i<=rangeEndInputNum;i++)
+			{
+				document.write("Iteration : "+i+"<br/>");
+			}
+		}
+
+			
+	</script>
+</head>
+<body>
+</body>
+</html>

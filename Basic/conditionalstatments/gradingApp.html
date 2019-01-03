@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Student Grades!</title>
+
+	<script type="text/javascript">
+		
+		var javaScriptMarks = parseInt(prompt("Enter student's Java Script Marks!","1-100"));
+		var javaMarks = parseInt(prompt("Enter student's Java Marks!","1-100"));
+		var netMarks = parseInt(prompt("Enter student's .Net Marks!","1-100"));
+
+		var totalMarks = javaScriptMarks + javaMarks + netMarks;
+		var gradesScore = totalMarks/3;
+
+		var isJavaScriptPass = true;
+		var isJavaPass = true;
+		var isNetPass = true;
+		var isMoreThan100 = false;
+
+		if(javaScriptMarks<35){
+			document.write("<b> Minimum 35 needed to pass </b> and evaluate the Grades! Student received "+ javaScriptMarks + " in Java Script!" +"<br/>");
+			isJavaScriptPass = false;
+		}
+
+		if(javaMarks<35){
+			document.write("<b> Minimum 35 needed to pass </b> and evaluate the Grades! Student received "+ javaMarks + " in Java! "+"<br/>");
+			isJavaPass = false;
+		}
+
+		if(netMarks<35){
+			document.write("<b> Minimum 35 needed to pass </b> and evaluate the Grades! Student received "+ netMarks + " in .Net! "+"<br/>");
+			isNetPass = false;
+		}
+
+
+		if(javaScriptMarks>100 || javaMarks>100 || netMarks>100){
+			 isMoreThan100 = true;
+		}
+
+		if(isMoreThan100){
+			document.write("No grades can be evaluate, "+ "<b> Marks should be less than or Equal 100!</b>, Please check your input!!"+"<br/>");
+		}
+		else if(isNetPass&isJavaPass&isJavaScriptPass){
+
+			document.write("Total Marks "+totalMarks + "!"+"<br/>");
+			document.write("Average Grade Score "+gradesScore+ "!"+"<br/>");
+
+			if(gradesScore>=35 && gradesScore<57){
+				document.write("Your Grade is C, please work hard to Improve!"+"<br/>");
+			}
+			if(gradesScore>=57 & gradesScore<69){
+				document.write("Your Grade is B, Good Job, plesae work hard to Improve!"+"<br/>");
+			}
+			if(gradesScore>=69){
+				document.write("Your Grade is A, Nice Job, please work hard to Maintain and Improve!"+"<br/>");
+			}
+
+		}
+		else
+		{
+			document.write("Student is Failed! No Grades are assigned!")
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

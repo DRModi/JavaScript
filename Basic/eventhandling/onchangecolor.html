@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On Change Color!</title>
+
+	<script type="text/javascript">
+		
+		function handleOnChangeColorEvent(arg){
+			document.bgColor = arg.value;
+		}
+
+	</script>
+</head>
+<body>
+
+	<select onchange="handleOnChangeColorEvent(this)">
+		<option value="">Select a color</option>
+		<option value="orange">Orange</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="yellow">Yellow</option>
+		<option value="green">Green</option>
+		<option value="black">Black</option>
+		<option value="pink">Pink</option>
+		<option value="purple">Purple</option>
+	</select>
+
+</body>
+</html>

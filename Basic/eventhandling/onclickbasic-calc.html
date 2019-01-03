@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On click Basic Calculator!</title>
+
+	<script type="text/javascript">
+		
+		function calculate(arg){
+
+			var num1 = parseInt(document.additionForm.number1.value);
+			var num2 = parseInt(document.additionForm.number2.value);
+
+			var sendResult = document.additionForm.result;
+
+			if(arg.value == "Addition"){
+				sendResult.value = num1+num2;	
+			}else if(arg.value == "Subtraction"){
+				sendResult.value = num1 - num2;
+			}else if(arg.value == "Multiplication"){
+				sendResult.value = num1*num2;
+			}else if(arg.value == "Division"){
+				sendResult.value = num1/num2;
+			}else{
+				sendResult.value = num1%num2;
+			}
+			
+		}
+
+	</script>
+</head>
+<body>
+
+	<form name="additionForm">
+		
+		Enter number 1: <input type="text" name="number1"> <br/>
+		Enter number 2: <input type="text" name="number2"> <br/>
+		Result        : <input type="text" name="result"> <br/>
+
+		<input type="button" name="add" value="Addition" onclick="calculate(this)"> 
+		<input type="button" name="sub" value="Subtraction" onclick="calculate(this)">
+		<input type="button" name="mul" value="Multiplication" onclick="calculate(this)"> 
+		<input type="button" name="div" value="Division" onclick="calculate(this)">
+		<input type="button" name="div" value="Modulus" onclick="calculate(this)">
+	</form>
+
+</body>
+</html>

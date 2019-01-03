@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment Skip multiplier of 11</title>
+	<script type="text/javascript">
+				var inputNum = parseInt(prompt("Enter Number!","0-100"));
+
+		if(inputNum>100){
+			document.write("Entered Number "+inputNum+" is not an valid number. Expected values should between 0-100");
+		
+		}
+		else{
+
+			document.write("Entered Number was : "+inputNum+". Following is the range iterations which starts from zero!" + "<br/> <br/> <br/>");
+
+
+
+			for(var i=0;i<=inputNum;i++)
+			{
+				var remainder = i%11;
+
+				if(remainder==0){
+					document.write("<b> This is the skipped iteration - </b> "+i+"<br/>");
+					continue;
+				}
+				document.write("Iteration : "+i+"<br/>");
+			}
+			
+			/*
+			
+			var i = 0;
+			while(i<=inputNum){
+
+				i++;
+
+				if(i==13){
+					document.write("<b> This is the skipped iteration 13 ! </b> <br/>");
+					continue;
+				}
+				document.write("Iteration : "+i+"<br/>");
+				// i++; 
+				//If you keep this increment which never executed, because it never reaches there and it //will stay in current execution! In order to execute, i should be incremented before //execution of current i state. So For loop is better/work around in this case. 
+			}*/
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

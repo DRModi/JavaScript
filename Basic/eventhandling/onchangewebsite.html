@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On Change Website</title>
+	<script type="text/javascript">
+
+		function handleOnChangeWebsiteEvent(arg){
+			window.location = arg;
+		}
+
+	</script>
+</head>
+<body>
+	<select onchange="handleOnChangeWebsiteEvent(this.value)">
+		<option value="">Select s website</option>
+		<option value="https://github.com/DRModi/">GitHub DRModi</option>
+		<option value="https://google.com">Google</option>
+		<option value="https://apple.com">Apple</option>
+	</select>
+</body>
+</html>

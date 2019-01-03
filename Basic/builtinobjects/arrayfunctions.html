@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Concat/Reverse/Join/Delete/Replace</title>
+
+	<script type="text/javascript">
+		var array1 = new Array(1, "array1", true);
+		var array2 = [11,14];
+		var array3 = new Array();
+		array3[0] = 7;
+		array3[1] = 8;
+
+		document.write("Print Array1 : <b>"+array1+"</b> <br/>");
+		document.write("Print Array2 : <b>"+array2+"</b> <br/>");
+		document.write("Print Array3 : <b>"+array3+"</b> <br/>");
+
+		document.write("<br/> <br/> <br/> ");
+		document.write("concat array1 + array2 + 05 + 21 + array3 <b> : "+array1.concat(array2,05,21,array3)+"</b> <br/>");
+
+		var concatedArray = array1.concat(array2,05,21,array3);
+
+		document.write("<br/> <br/> <br/> ");
+		document.write("reverse above concatedArray <b> : "+concatedArray.reverse()+"</b>");
+
+		document.write("<br/> <br/> <br/> ");
+		document.write("Join concatedArray with underscore_ <b> : "+concatedArray.join("_")+"</b> <br/>");
+
+		document.write("<br/> <br/> <br/> ");
+		document.write("Print Array1 : <b>"+array1+"</b> <br/>");
+		delete array1[0];
+		document.write("Delete index[0] from Array1 : <b>"+array1+"</b> <br/>");
+		document.write("After Delete of index[0] - value of index[0] print Array1  : <b>"+array1[0]+"</b> <br/>");
+
+		document.write("<br/> <br/> <br/> ");
+
+		array1[1] = "Replace From Array1";
+		document.write("Replace index 1 from Array1 : <b>"+array1+"</b> <br/>");
+		document.write("After Replace index[1] - value of index[0] - print Array1  : <b>"+array1[0]+"</b> <br/>");
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

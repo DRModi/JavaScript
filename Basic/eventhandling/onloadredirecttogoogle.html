@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redirect to Google</title>
+	<script type="text/javascript">
+		
+		function waitForFiveSecond(){
+			setTimeout(handleOnLoadRedirectToGoogle,5000);
+			//setTimeout is in-built javascript function 
+		}
+
+		function handleOnLoadRedirectToGoogle(){
+				window.location = "https://google.com"
+		}
+	</script>
+</head>
+<body onload="waitForFiveSecond()">
+	<b> Redirecting Google... </b>
+</body>
+</html>

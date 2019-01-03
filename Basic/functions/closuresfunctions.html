@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures Functions</title>
+
+
+	<script type="text/javascript">
+		
+		var a = "Learning";
+
+		function parentfunction(){
+
+			var b = " The Closures";
+
+			function childfunction(){
+				var c = " Functions in Javascript!";
+				
+				document.write("Concate three strings using Closures (" + a + ", "+ b + ", "+ c + "<br/> <br/>");
+				document.write("Here is the Full String: <b> " + a+b+c + "<b>");
+			}
+			
+			return childfunction();
+		}
+
+		parentfunction();
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

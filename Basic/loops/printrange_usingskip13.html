@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Continue Skip loop at 13</title>
+	<script type="text/javascript">
+				var inputNum = parseInt(prompt("Enter Number!","0-100"));
+
+		if(inputNum>100){
+			document.write("Entered Number "+inputNum+" is not an valid number. Expected values should between 0-100");
+		
+		}
+		else{
+
+			document.write("Entered Number was : "+inputNum+". Following is the range iterations which starts from zero!" + "<br/> <br/> <br/>");
+
+			var i = 0;
+
+			for(var i=0;i<=inputNum;i++)
+			{
+				if(i==13){
+					document.write("<b> This is the skipped iteration 13 ! </b> <br/>");
+					continue;
+				}
+				document.write("Iteration : "+i+"<br/>");
+			}
+			
+			/*while(i<=inputNum){
+
+				i++;
+
+				if(i==13){
+					document.write("<b> This is the skipped iteration 13 ! </b> <br/>");
+					continue;
+				}
+				document.write("Iteration : "+i+"<br/>");
+				// i++; If you keep this which neve executed, because it never reaches there and it will stay in current execution! In order to execute, i should be incremented before execution of current i state. So For loop is better/work around in this case. 
+			}*/
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

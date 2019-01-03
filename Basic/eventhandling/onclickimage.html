@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On Click Image!</title>
+	<script type="text/javascript">
+		function handleOnClickImageEvent(arg){
+			document.body.style.backgroundImage = "url('"+arg+"')";
+		}
+	</script>
+</head>
+<body>
+
+	<select onchange="handleOnClickImageEvent(this.value)">
+		<option value="">Select an Image</option>
+		<option value="/Users/omsairam/Pictures/NASA/Aaradhy.jpeg">Aaradhy's Image</option>
+		<option value="/Users/omsairam/Pictures/NASA/Arti.jpeg">Arti's Image</option>
+		<option value="/Users/omsairam/Pictures/NASA/Dada.jpeg">Dada's Image</option>
+		<option value="/Users/omsairam/Pictures/NASA/Mom_NASA.jpeg">Baa's Image</option>
+		<option value="/Users/omsairam/Pictures/NASA/dixit.jpeg">Dixit's Image</option>
+	</select>
+
+</body>
+</html>

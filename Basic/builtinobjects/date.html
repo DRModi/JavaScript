@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Built In Object!</title>
+	<script type="text/javascript">
+
+	//use setinterval inbuilt function with closures to update time every second:
+
+	function displayTimeEverySecond(){
+		setInterval(displayDateAndTime, 1000);
+	}
+
+		function displayDateAndTime(){
+			var currentDateTime = new Date();
+			document.getElementById("dateandTimeInfoId").innerHTML = currentDateTime;
+
+			var currentDate = currentDateTime.toLocaleTimeString();
+			document.getElementById("dateInfoId").innerHTML = currentDate;
+
+			var currentTime = currentDateTime.toLocaleDateString();
+			document.getElementById("timeInfoId").innerHTML = currentTime;	
+
+			var strCurrentDateTime = currentDateTime.toLocaleString();
+			document.getElementById("dateandTimeStrInfoId").innerHTML = strCurrentDateTime;			
+
+		}
+	</script>
+</head>
+<body onload="displayTimeEverySecond()">
+	<b> Current Date and Time: </b>
+	<p id="dateandTimeInfoId"></p> <br/> <br/> <br/>
+
+	<b> Current Date In String: </b>
+	<p id="dateInfoId"></p> <br/> <br/> <br/>
+
+	<b> Current Time in String: </b>
+	<p id="timeInfoId"></p> <br/> <br/> <br/>
+	
+	<b> Current Date and Time in String: </b>
+	<p id="dateandTimeStrInfoId"></p> <br/> <br/> <br/>
+
+</body>
+</html>
