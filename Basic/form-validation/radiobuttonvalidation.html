@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Radio Button Validation</title>
+
+	<script type="text/javascript">
+		function paymentValidation(){
+			
+			var isSelected = false;
+
+			var radioValues = document.myform.paymentmode;
+
+			for(var i=0; i<radioValues.length; i++){
+
+				if(radioValues[i].checked){
+					isSelected = true;
+				}
+			}
+
+			if(isSelected){
+				alert("Validation Successful");
+			}else{
+				alert("Please choose mode of payment!");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>Choose mode of Payment: </h3>
+
+	<form name="myform" action="paymentprocess.aspx" onsubmit="return paymentValidation()">
+		
+		<input type="radio" name="paymentmode" value="cod">Cash on delivery <br/>
+		<input type="radio" name="paymentmode" value="creditcard">Credit Card <br/>
+		<input type="radio" name="paymentmode" value="debitcard">Debit Card <br/>
+
+		<input type="submit" name="submit">
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML:Node</title>
+	<script type="text/javascript">
+		function removeQuote(){
+
+			var parentNode = document.getElementById("divID");
+			var rmvQuoteChildNode = document.getElementById("para2");
+			parentNode.removeChild(rmvQuoteChildNode);
+
+			
+		}
+
+		function addChildQuote(){
+
+			var parentNode = document.getElementById("divID");
+			var addChildNode = document.createElement("p");
+			var text = document.createTextNode("The self is made, not given!!");
+			addChildNode.appendChild(text);
+
+			parentNode.appendChild(addChildNode);
+
+		}
+	</script>
+</head>
+<body>
+	<div id="divID">
+		<p id="para1">If you don't prioritize your self, someone else will!</p>
+		<p id="para2">Less waste of time, watching tv is your choice!</p>
+	</div>
+<input type="button" onclick="removeQuote()" value="Remove" id="buttonID" />
+<input type="button" onclick="addChildQuote()" value="Add" id="buttonID" />
+</body>
+</html>

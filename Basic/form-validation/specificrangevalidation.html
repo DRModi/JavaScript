@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Specific Range Validation!</title>
+	<script type="text/javascript">
+		function isValidEmailID(){
+
+			var regex = /^[A-Za-z0-9@.]{5,20}$/;
+			var email = document.myform.validEmail.value;
+			var isValid = regex.test(email);
+
+			if(isValid){
+				alert("Entered Email is valid!");
+			}else{
+				document.getElementById("error").innerHTML = "Please enter valid email id, should contain alphanumeric value with @ and .com";
+				document.myform.validEmail.focus();
+				return false;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h3>Enter valid email id: </h3>
+	<form name="myform" action="validEmailId.jsp" onsubmit="return isValidEmailID()">
+
+		<input type="text" name="validEmail"/>
+		<br/>
+		<b id="error"></b>
+		<br/>
+		<input type="submit" name="submit" value="valid"/>
+		
+	</form>
+
+</body>
+</html>

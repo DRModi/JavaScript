@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vaidation Using Regex!</title>
+</head>
+<body>
+
+	<h3> User Registration Validation! </h3>
+
+	<form name="myform" action="userregistration.jsp" onsubmit="return validation()">
+		
+		User Name: <input type="text" name="uName"/> 
+		<br/><br/>
+		<input type="submit" value="Register"/>
+
+	</form>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function validation(){
+		var userName = document.myform.uName.value;
+		var regex = /^[A-Za-z]+$/;
+
+		var result = regex.test(userName);
+
+		if(result){
+			alert("Validation Successful");
+		}
+		else{
+			alert("Enter valide Name");
+			return false;
+			document.myform.uName.focus();
+		}
+	};
+</script>

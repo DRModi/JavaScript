@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validate Text Fields!</title>
+	<script type="text/javascript">
+		function validateUser(){
+			var userid = document.myform.userid.value;
+			var password = document.myform.password.value;
+			var email = document.myform.email.value;
+
+			if(email==""){
+				alert("Email must be entered!");
+				document.myform.email.focus();
+				return false;
+			}else if(password==""){
+				alert("Password must be entered!");
+				document.myform.password.focus();
+				return false;
+			}else if(userid==""){
+				alert("UserId must be entered!");
+				document.myform.userid.focus();
+				return false;
+			}else{
+				alert("Validation successful!");
+				return true;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h3> User Registration! </h3>
+	<form name="myform" action="registration.jsp" onsubmit="return validateUser()">
+		UserName: <input type="text" name="userid"/><br/>
+		Password: <input type="password" name="password"><br/>
+		Email:	  <input type="text" name="email"><br/>
+
+		<input type="submit" name="submit" value="Register">
+
+	</form>
+
+</body>
+</html>

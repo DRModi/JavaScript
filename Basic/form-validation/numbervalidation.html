@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validate Entered Number</title>
+	<script type="text/javascript">
+		
+		function validateNum(){
+
+			var num = document.myform.numenter.value;
+
+			if(isNaN(num) || num<1 || num>10){
+				alert("Please enter valid number between 1- 10!");
+				document.myform.numenter.focus();
+				return false;	
+			}else{
+				alert("Entered Number is valid!");
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>Enter a Number between 1-10:</h3>
+	<form name="myform" action="numberreg.php" onsubmit="return validateNum()">
+		Enter Number: <input type="text" name="numenter"><br/>
+		<input type="submit" name="submit">
+	</form>
+</body>
+</html>

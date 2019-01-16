@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Error Throw!</title>
+	<script type="text/javascript">
+
+		function validateAge(){
+			try{
+
+				var enteredAge = document.getElementById("ageId").value;
+				if(enteredAge==""){
+					var x = "Please check your input, age can't be empty/null";
+					throw x;
+				}
+				if(enteredAge<18){
+					throw "You are not eligible to Vote, age must be 18 or more!";
+				}
+
+			}catch(obj){
+
+			
+				document.getElementById("errorInfo").innerHTML = obj;
+			
+			}finally{
+				// Finally is always executed irrespective of error occured or //not. mainly used to release the resource.
+
+				document.getElementById("finallyInfo").innerHTML = "Finally is always executed!"
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<b>Enter the age to check voting rights: </b> <input type="text" id="ageId"/>
+	<br/>
+	<input type="button" onclick="validateAge()" value="Validate"/>
+	<br/>
+	<p id="errorInfo" style="color:red"></p>
+	<br/>
+	<p id="finallyInfo" style="color:blue"></p>
+</body>
+</html>

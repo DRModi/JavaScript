@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Singleton Object!</title>
+	<script type="text/javascript">
+		var blogpost = new function(){
+			this.titlebp = "JavaScript";
+			this.textbp = "It is an object oriented programming language!!";
+			this.category = "UI Technology!";
+			this.displayBlogPost = function(){
+				document.write(this.titlebp+"<br/>");
+				document.write(this.textbp+"<br/>");
+				document.write(this.category+"<br/>");
+			}
+		}
+
+		blogpost.displayBlogPost();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

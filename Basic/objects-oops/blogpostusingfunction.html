@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blogpost Using Function!</title>
+	<script type="text/javascript">
+		
+		function blogpost(titlebp, textbp){
+			this.title = titlebp;
+			this.text = textbp;
+			this.addCategory = addCategoryProperty;
+			this.displayBlogPost = displayBlogPostObject;
+
+		}
+
+		function addCategoryProperty(categorybp){
+			this.category = categorybp;
+		}
+
+		function displayBlogPostObject(){
+
+		document.write(this.title+"<br/>");
+		document.write(this.text+"<br/>");
+		document.write(this.category+"<br/>");
+
+		}
+
+
+		var blogpost1 = new blogpost("JQuery", "It is a liberary and make javascript easier to use");
+		blogpost1.addCategory("UI Technology!");
+		blogpost1.displayBlogPost();
+
+		/*
+		Display using function displayBlogPostObject......
+		document.write(blogpost1.title+"<br/>");
+		document.write(blogpost1.text+"<br/>");
+		document.write(blogpost1.category+"<br/>");
+		*/
+
+		var blogpost2 = new blogpost("AngularJS", "It is being used to build single page application");
+		blogpost2.addCategory("Advanced UI Technology!");
+		blogpost2.displayBlogPost();
+
+		/*
+		Display using function displayBlogPostObject......
+		document.write(blogpost2.title+"<br/>");
+		document.write(blogpost2.text+"<br/>");
+		document.write(blogpost2.category+"<br/>");
+		*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>

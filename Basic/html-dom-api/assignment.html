@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment!</title>
+	<script type="text/javascript">
+
+		function removePhone(){
+			var parentNode = document.getElementById("parentID");
+			var removeChildNode = document.getElementById("cellphoneID");
+			parentNode.removeChild(removeChildNode);
+		}
+
+		function addTV(){
+			var parentNode = document.getElementById("parentID");
+			var createChildNode = document.createElement("p");
+			var text = document.createTextNode("TV - $1500.00");
+			createChildNode.appendChild(text);
+
+			parentNode.appendChild(createChildNode);
+
+
+		}
+	</script>
+</head>
+<body>
+	<div id="parentID">
+		<p id="laptopID">Laptop - $2500.00</p>
+		<p id="cellphoneID">Cellphone - $1000.00</p>
+	</div>
+	<input type="button" value="AddTV" id="tvButton" onclick="addTV()" />
+	<input type="button" value="RemovePhone" id="phoneButton" onclick="removePhone()" />
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alpha Numeric Validation Using Regex!</title>
+
+	<script type="text/javascript">
+
+		function validation(){
+
+			var enteredValue = document.myform.address.value;
+			var regex = /^[A-Za-z0-9-\s]+$/;
+
+			var isValid = regex.test(enteredValue);
+
+			if(isValid){
+				alert("Validation Successful");
+			}else{
+				document.getElementById("error").innerHTML="Please enter alpha numeric values, spaces are allowed!";
+				document.myform.address.focus();
+				return false;
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+	<h3>Enter your address: </h3>
+
+	<form name="myform" action="address.php" onsubmit="return validation()">
+		Address: <textarea name="address"></textarea>
+		<br/>
+		<b style="color:red"  id="error"></b>
+		<br/>
+		<input type="submit" name="submit" value="Add"/>
+	</form>
+</body>
+</html>

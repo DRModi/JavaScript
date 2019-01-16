@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckBox Validation</title>
+	<script type="text/javascript">
+		function validateTechnologyChecked(){
+			var isSelected = false;
+
+			if(document.getElementById("javascript").checked){
+				isSelected = true;
+			}
+			else if(document.getElementById("java").checked){
+				isSelected = true;
+			}
+			else if(document.getElementById("datastructure").checked){
+				isSelected = true;
+			}
+			else if(document.getElementById("algorithms").checked){
+				isSelected = true;
+			}
+			else if(document.getElementById("systemdesign").checked){
+				isSelected = true;
+			}
+
+			if(isSelected){
+				alert("Selection Successful!")
+			} else {
+				alert("Please select atleast one technology!");
+				return false;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h3>Select Technology: </h3>
+
+	<form name="myform" action="mainpage.php" onsubmit="return validateTechnologyChecked()">
+		<input type="checkbox" name="JavaScript" id="javascript">JavaScript <br/>
+		<input type="checkbox" name="Java" id="java">Java <br/>
+		<input type="checkbox" name="DataStructure" id="datastructure">DataStructure <br/>
+		<input type="checkbox" name="Algorithms" id="algorithms">Algorithms <br/>
+		<input type="checkbox" name="SystemDesign" id="systemdesign">SystemDesign <br/>
+		<br/>
+		<input type="submit" name="submit"/>
+	</form>
+
+</body>
+</html>

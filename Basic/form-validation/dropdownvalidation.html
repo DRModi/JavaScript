@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dropdown Selection</title>
+	<script type="text/javascript">
+		function validateDropdownValue(){
+		var selectedColor = document.myform.selectionbox.value;
+
+		if(selectedColor==""){
+			alert("Please select color!");
+			document.myform.selectionbox.focus;
+			return false
+		}else{
+			alert("Selection Successful!");
+		}
+		}
+
+	</script>
+</head>
+<body>
+	<h3>Select color: </h3>
+	<form name="myform" action="dropdown.aspx" onsubmit="return validateDropdownValue()">
+		
+		<select name="selectionbox">
+			<option value="">Select Color</option>
+			<option value="blue">Blue</option>
+			<option value="red">Red</option>
+			<option value="yellow">Yellow</option>
+			<option value="green">Green</option>
+		</select>
+		
+		<input type="submit" name="submit"/>
+	</form>
+
+</body>
+</html>
