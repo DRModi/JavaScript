@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Define Prototype</title>
+	<script type="text/javascript">
+		
+		function Flight(airlineName, flightNumber){
+			this.airlines = airlineName;
+			this.flightNo = flightNumber;
+		}
+		
+		//Multiple Prototype can defined two way: 
+		/*
+		//(1) - Individual prototype property
+		Flight.prototype.display = function(){
+			console.log("this.airlineName");
+			console.log(this.airlines);
+			console.log("this.flightNo");
+			console.log(this.flightNo);
+		};
+		
+		Flight.prototype.toString = function(){
+			return " toStringMethod:   Airlines Name: " + this.airlines + " - Flight Number : "+this.flightNo;
+		};
+		
+		*/
+		
+		
+		//  /*
+		//(2) Mutliple object literal property - 
+		Flight.prototype  = {
+		
+		//constructor: Flight, //Require to define constructor property wehenever literal sysntex being used otherwise it would be considered as another object. Uncomment it to see how it changes the instance checking.
+		
+		display: function(){
+			console.log("this.airlineName");
+			console.log(this.airlines);
+			console.log("this.flightNo");
+			console.log(this.flightNo);
+		},
+		
+		toString: function(){
+			return " toStringMethod:   Airlines Name: " + this.airlines + " - Flight Number : "+this.flightNo;
+		}
+		
+		};
+		//  */
+		
+		var f1 = new Flight("Air India", "AIA007");
+		var f2 = new Flight("American Airlines", "USA011");
+		
+		f1.display();
+		f2.display();
+		
+		console.log("              ");
+		
+		console.log(f1.toString());
+		console.log(f2.toString());
+		
+		
+		console.log("              ");
+		
+		console.log("f1 instanceof Flight");
+		console.log(f1 instanceof Flight);
+		
+		console.log("f1.constructor === Flight");
+		console.log(f1.constructor === Flight);
+		
+		console.log("f1.construcor === Object");
+		console.log(f1.construcor === Object);
+		
+		
+		console.log("              ");
+		console.log("     IN-Built String Prototype         ");
+		
+		String.prototype.display = function(){ console.log(this);};
+		
+		"InvokeString".display();
+		
+		console.log("              ");
+		String.prototype.display2 = function(){ console.log(this.toString());};
+		"InvokeString".display2();
+		
+	</script>
+</head>
+<body/>
+</html>

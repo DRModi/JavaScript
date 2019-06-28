@@ -1,0 +1,47 @@
+<html>
+<head/>
+<body>
+	<script>
+		"use strict";
+		
+		const pi=3.14;
+		//pi=3.19; //it will error out saying - assignment to constant variable
+		console.log(pi);
+		
+		const product = {
+			name: "iphone"
+		};
+		
+		// so since product being declared constant - still we are able to add / update 
+			//the attribute and its value
+		product['price'] = 1000;
+		
+		console.log(product);
+		console.log(product.name);
+		console.log(product.price);
+		
+		product.price = 750;
+		
+		console.log(product);
+		
+		product.name="iMAC";
+		console.log(product);
+		
+		//To stop happning the update of the const declare object, use freeze functionality
+		
+		const car = Object.freeze({
+			name: "Honda"
+		});
+		
+		console.log(car);
+		
+		//car['price'] = 50000; // it will give error that Object is not extensible
+		
+		console.log(car);
+		
+		car.name="Toyota"; //it will give error can't be assign, read only property
+		console.log(car);
+		
+	</script>
+</body>
+</html>

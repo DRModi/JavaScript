@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Map!</title>
+	<script>
+		
+		var scores = new Map([["maths",95],["physics",90],["english",80]]);
+		
+		
+		//var scores = new Map(); // Also can be initialized as shown above.
+		
+		//size
+		console.log("map size - before adding any entry");
+		console.log(scores.size);
+		
+		//scores.set("maths",95);
+		//scores.set("physics",90);
+		//scores.set("english",80);
+		//scores.set("english",70);
+		
+		scores.set("computer",100);
+		
+		console.log("map size - after adding any entry");
+		console.log(scores.size);
+		
+		console.log("Scores for maths, physics and english are as follow:");
+		console.log(scores.get("maths"));
+		console.log(scores.get("physics"));
+		console.log(scores.get("english"));
+		
+		console.log("map size - before adding any entry");
+		console.log(scores.size);
+		
+		//has
+		console.log("is Chemistry score is available: ");
+		console.log(scores.has("chemistry"));
+		
+		//Delete English
+		scores.delete("english");
+		
+		console.log("English score is available: After delete : ");
+		console.log(scores.has("english"));
+		
+		//size
+		console.log("map size - After English deleted");
+		console.log(scores.size);
+		
+		//clear the maps
+		scores.clear();
+		
+		//size
+		console.log("map size - After Clear");
+		console.log(scores.size);
+		
+		
+	</script>
+</head>
+	
+<body/>
+</html>

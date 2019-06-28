@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+	<script>
+		
+		//Existing way
+		function add(options){
+			console.log(options.num1+options.num2+options.num3);
+		}
+		
+		add({num1:10, num2:20, num3:30});
+		
+		//ES6 - 
+		function add1({num1=5,num2,num3}){
+			console.log(num1+num2+num3);
+		}
+		console.log(" ES6 ");
+		add1({num1:10, num2:20, num3:30});
+		
+		
+		console.log(" ES6 - Using Default 5 ");
+		add1({num2:20, num3:30});
+	</script>
+
+</body>
+</html>

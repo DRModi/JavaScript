@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Module Pattern!</title>
+	<script>
+		var account = (function(){
+		
+		//private data
+		var balance = 1000;
+		
+		//privillaged methods / public methods
+		return {
+		
+			name: "Peter",
+			getAccountBalance: function(){
+				return balance;
+			},
+			addInterest: function(interest){
+				balance += interest;
+			}
+		
+		};
+		
+		}());
+		
+		console.log("account.name");
+		console.log(account.name);
+		
+		console.log("Initial - account.getAccountBalance()");
+		console.log(account.getAccountBalance());
+		
+		//try to access the account balance
+		account.balance = 2000;
+		
+		console.log("After directly set account balance to 2000 - account.getAccountBalance()");
+		console.log(account.getAccountBalance());
+		
+		//update the balance with addInterest method
+		account.addInterest(500);
+		
+		
+		console.log("After 500 interest - account.getAccountBalance()");
+		console.log(account.getAccountBalance());
+		
+	
+	</script>
+</head>
+
+<body/>
+</html>

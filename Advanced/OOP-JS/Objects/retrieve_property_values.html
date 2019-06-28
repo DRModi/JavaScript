@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title> Reading Object Property Values!</title>
+	<script type="text/javascript">
+		var creditCard = {
+			name: "Peter"
+		};
+		
+		
+		var propDescriptor = Object.getOwnPropertyDescriptor(creditCard, "name");
+		console.log("propDescriptor.enumerable");
+		console.log(propDescriptor.enumerable);
+		
+		console.log("propDescriptor.configurable");
+		console.log(propDescriptor.configurable);
+		
+		console.log("propDescriptor.writable");
+		console.log(propDescriptor.writable);
+		
+		console.log("propDescriptor.value");
+		console.log(propDescriptor.value);
+		
+		
+		
+	</script>
+</head>
+
+<body/>
+</html>

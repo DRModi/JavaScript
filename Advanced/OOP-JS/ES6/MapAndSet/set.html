@@ -1,0 +1,55 @@
+<html>
+
+<body>
+	<script>
+		var courses = new Set(["Java","JavaScript","OS"]).add("DS n Algo");
+		
+		//size
+		console.log("set size");
+		console.log(courses.size);
+		
+		
+		//has Network
+		console.log("has Network");
+		console.log(courses.has("Network"));
+		
+		//has OS
+		console.log("has OS");
+		console.log(courses.has("OS"));
+		
+		courses.add("Network");
+			
+		//size
+		console.log("Added Network - Now size");
+		console.log(courses.size);
+		
+		courses.delete("Network");
+				
+		//has Network
+		console.log("Delete Network and check set has:");
+		console.log(courses.has("Network"));
+		
+		//size
+		console.log("deleted Network - Now size");
+		console.log(courses.size);
+		
+		
+		//Loop
+		console.log("Looping All Values in Set");
+		for(value of courses.values())
+		{
+			console.log(value);
+		}
+		
+		//Clear
+		console.log("Clearing whole Set");
+		courses.clear();
+		
+		//size
+		console.log("Cleared Set - Now size");
+		console.log(courses.size);
+		
+	</script>
+</body>
+
+</html>

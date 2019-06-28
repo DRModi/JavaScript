@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>Prototypes</title>
+	<script type="text/javascript">
+		
+		var passanger = {
+			name: "Peter"
+		};
+		
+		console.log("name in passanger");
+		console.log("name" in passanger);
+		
+		console.log("passanger.hasOwnProperty(name)");
+		console.log(passanger.hasOwnProperty("name"));
+		
+		console.log("hasOwnProperty in passanger");
+		console.log("hasOwnProperty" in passanger);
+		
+		console.log("passanger.hasOwnProperty(hasOwnProperty)");
+		console.log(passanger.hasOwnProperty("hasOwnProperty"));
+		
+		console.log("Object.prototype.hasOwnProperty(hasOwnProperty)");
+		console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
+		
+		//Check prototype pointing to the main object prototype
+		
+		var myGenericObj = {};
+		
+		var prototypeOfGenericObj = Object.getPrototypeOf(myGenericObj);
+		
+		console.log("prototypeOfGenericObj === Object.prototype");
+		console.log(prototypeOfGenericObj === Object.prototype);
+		
+		console.log("Object.prototype.isPrototype(myGenericObj)");
+		console.log(Object.prototype.isPrototypeOf(myGenericObj));
+	
+	</script>
+</head>
+
+<body/>
+
+</html>

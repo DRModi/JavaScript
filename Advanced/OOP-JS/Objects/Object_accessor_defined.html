@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title> Accessor! </title>
+	<script type="text/javascript">
+		var creditCard = {};
+		
+		Object.defineProperties(creditCard, 
+		{			
+			_cardNo:{
+				value:"123456789",
+				enumerable:true,
+				configurable:true,
+				writable:true
+			},
+			
+			cardNo:{
+				get: function(){
+					return this._cardNo;
+				},
+				set: function(value){
+					this._cardNo = value;
+				},
+				enumerable:true,
+				configurable:true,
+				
+			}
+			
+		});
+		
+		console.log("Printing the creditCard Number: ");
+		console.log(creditCard.cardNo);
+		console.log("      ");
+		
+		console.log("Updated the creditCard Number: ");
+		creditCard.cardNo = "987654321";
+		console.log(creditCard.cardNo);
+		console.log("      ");
+		
+		
+		
+		
+	</script>
+</head>
+
+<body/>
+</html>

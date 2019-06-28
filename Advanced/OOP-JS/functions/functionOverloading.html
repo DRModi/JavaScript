@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>ArgumentsWithoutDefined</title>
+		<script type="text/javascript">
+
+			
+			
+			function findSum(arg, arg1, arg2){
+				document.write("From Function with 3 args");
+				return (arg+arg1+arg2);				
+			}
+			
+			function findSum(arg, arg1){
+				document.write("From Function with 2 args");
+				return (arg+arg1);				
+			}
+			
+			document.write(" - Function Overloading <b>issues </b>: Running findSum(1, 10, 200) : Expected : 211 and Actual is <b> "+findSum(1, 10, 200) + "</b><br/>");
+			document.write(" - Running findSum(1, 10) : Expected : 11 and Actual is <b> "+findSum(1, 10) + "</b><br/><br/><br/>");
+			
+		
+		
+			//one way resolving issue using arguments.length
+			
+		
+			function findSumUsingArgs(){
+			
+				var result = 0;
+				
+				var argLength = arguments.length;
+				
+				if(argLength==2){
+					for(var i=0;i<argLength;i++){
+						result = result + arguments[i];
+					}
+					document.write("From Function with 2 args");
+				}
+				
+				if(argLength==3){
+					for(var i=0;i<argLength;i++){
+						result = result + arguments[i];
+					}
+					document.write("From Function with 3 args");
+				}
+				
+				
+				
+				return result;
+			}
+			
+			
+			document.write(" - Function Overloading <b>issue resolved </b> using <b>Arguments.length</b> : Running findSumUsingArgs(1, 10, 200) : Expected : 211 and Actual is <b> "+findSumUsingArgs(1, 10, 200) + "</b><br/>");
+			document.write(" - Running findSumUsingArgs(1, 10) : Expected : 11 and Actual is <b> "+findSumUsingArgs(1, 10) + "</b><br/><br/><br/>");
+			
+			
+			
+			//Another way is using undefined on the named parameters
+					
+			function findSumUsingUndefined(arg, arg1, arg2){
+			
+				var result = 0;
+				var isArg2 = true;
+				
+				if (arg2 === undefined){
+					isArg2 = false;
+				}
+				
+				if(arg2){
+						result = arg + arg1 + arg2;
+						document.write("From Function with 3 args");
+				}else{
+						result = arg + arg1;
+						document.write("From Function with 2 args");
+				}
+				
+				return result;
+			}
+			
+			document.write(" - Function Overloading <b>issue resolved </b> using <b>Undefined</b> : Running findSumUsingUndefined(1, 10, 200) : Expected : 211 and Actual is <b> "+findSumUsingUndefined(1, 10, 200) + "</b><br/>");
+			document.write(" - Running findSumUsingArgs(1, 10) : Expected : 11 and Actual is <b> "+findSumUsingUndefined(1, 10) + "</b><br/><br/><br/>");
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

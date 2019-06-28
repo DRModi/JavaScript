@@ -1,0 +1,48 @@
+<html>
+<head>
+	
+	<script type="text/javascript">
+	
+		function letDemo(){
+			var i=5;
+			
+			console.log("Running Block I -- START --");
+			for(var i = 0; i<=10; i++){
+				//console.log(i);
+			}
+			console.log("Running Block I -- END --");
+			
+			console.log("Function Scope - Variable decalred with var - I value: ");
+
+			console.log(i);
+			
+			
+			// block let j
+			var j=5;
+			console.log("Running Block J -- START --");
+			
+			for(let j=0;j<=10;j++){
+				//console.log(j);
+				let x = 10;
+				var y = 11;
+			}
+			console.log("Running Block J -- END --");
+			
+			console.log("Block Scope - BINGOOOOO the value of J is : 5 ");
+			console.log(j);
+			
+			console.log("Y value: ");
+			console.log(y);
+			
+			console.log();
+			console.log();
+			
+			console.log("X value: ERROR - B'coz x defined with let and in for loop block");
+			console.log(x);
+		}
+		
+		letDemo();
+	</script>
+</head>
+<body/>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Constructor Inheritance!</title>
+	<script type="text/javascript">
+		
+		function Doctor(name){
+			this.name = name;
+		};
+	
+	
+		Doctor.prototype.treat = function(){
+			return "Patient Treated By Doctor : - " + this.name;
+		};
+		
+		Doctor.prototype.toString = function(){
+			return "Doctor Name: "+this.name;
+		};
+		
+		function Surgeon(name,type){
+			this.name = name;
+			this.type = type;
+		};
+
+		Surgeon.prototype = new Doctor(); //create prototype of Doctor behind the scene, kind of relationship to child parent
+		//Surgeon.prototype.constructor = Surgeon; //It make sure when we do instance of then it matched to the surgeon
+
+		Surgeon.prototype = Object.create(Doctor.prototype, {
+			constructor: {
+				configurable: true,
+				enumerable: true,
+				value: Surgeon,
+				writable: true
+			}
+		
+		});
+		
+		Surgeon.prototype.toString = function(){
+			return "Surgeon Name : " + this.name + " Type: "+this.type;
+		}
+		
+		//Overridding parent method
+		Surgeon.prototype.treat = function(){
+			return  Doctor.prototype.treat.call(this) + "! Who is Specialist in : "+this.type;
+		}
+		
+		
+		var doctor = new Doctor("Peter");
+		var surgeon = new Surgeon("Mark", "Orthopedic");
+		
+		console.log("doctor.treat()");
+		console.log(doctor.treat());
+		console.log("surgeon.treat()");
+		console.log(surgeon.treat());
+		
+		console.log("");
+		
+		console.log("doctor.toString()");
+		console.log(doctor.toString());
+		console.log("surgeon.toString()");
+		console.log(surgeon.toString());
+		
+		console.log("");
+
+		console.log("doctor instanceof Doctor");
+		console.log(doctor instanceof Doctor);
+		
+		console.log("doctor instanceof Object");
+		console.log(doctor instanceof Object);
+		
+		console.log("surgeon instanceof Object");
+		console.log(surgeon instanceof Object);
+		
+		console.log("surgeon instanceof Doctor");
+		console.log(surgeon instanceof Doctor);
+		
+		console.log("surgeon instanceof Surgeon");
+		console.log(surgeon instanceof Surgeon);
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body/>
+</html>

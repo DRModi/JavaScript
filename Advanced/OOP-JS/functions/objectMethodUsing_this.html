@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+	<title>Object Method Using This</title>
+	<script type="text/javascript">
+	
+	function displayDetails(){
+		document.write("Student Id : "+this.id + "<br/>"+ "Student Name: "+this.name+"<br/>");
+	}
+	
+	var student = {
+		id:1,
+		name: "Bob",
+		display: displayDetails
+	};
+	
+	var student1 = {
+		id:2,
+		name: "Mark",
+		display: displayDetails
+	};
+	
+	student.display();
+	student1.display();
+	
+	//Globally use of this keyword:
+	this.id = 3;
+	this.name = "Steve";
+	this.displayDetails();
+	
+	
+	</script>
+
+</head>
+
+<body/>
+
+
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Arry In Built Type - 3 Ways!</title>	
+		<script text="src/javascript">
+			document.write("<b> Initializing Array with Array(1, Test Array, true) </b>");
+			
+			var array1way = new Array(1, "Test Arry", true);
+			document.write("Print Array Length: <b>"+array1way.length+"</b> <br/>");
+			document.write("Print Array Stored Value: <b>"+array1way+"</b> <br/>");
+			document.write("Print Array Stored Value 0: <b>"+array1way[0]+"</b> <br/>");
+			document.write("Print Array Stored Value 1: <b>"+array1way[1]+"</b> <br/>");
+			document.write("Print Array Stored Value 2: <b>"+array1way[2]+"</b> <br/>");
+			
+			
+			document.write("<br/> <br/> <br/> <br/> <br/>");
+			document.write("<b> Initializing Array directly [2, Test Array, true] </b> <br/>");
+
+			var array2way = [2,"Test Arry",true];
+			document.write("Print Array Length: <b>"+array2way.length+"</b> <br/>");
+			document.write("Print Array Stored Value: <b>"+array2way+"</b> <br/>");
+			
+			
+			document.write("<br/> <br/> <br/> <br/> <br/>");
+			document.write("<b> Initializing Array with assign in value [3, Test Array, true] </b> <br/>");
+			
+			var array3way = new Array();
+			array3way[0] = 3;
+			array3way[1] = "Test Array";
+			array3way[2] = true;
+			
+			document.write("Print Array Length: <b>"+array3way.length+"</b> <br/>");
+			document.write("Print Array Stored Value: <b>"+array3way+"</b> <br/>");
+			
+			
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

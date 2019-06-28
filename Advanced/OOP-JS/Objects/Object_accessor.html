@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title> Accessor and Mutator! </title>
+	<script type="text/javascript">
+		var creditCard = {
+			_name: "Bob",
+			//_cardNo: "123456789",
+			
+			get ccName(){
+				return this._name;
+			},
+			
+			set ccName(updatedName){
+				this._name = updatedName;
+			}
+		};
+		
+		
+		console.log("Printing the creditCard holder Name: ");
+		console.log(creditCard.ccName);
+		console.log("      ");
+		
+		console.log("Updated the creditCard holder Name: ");
+		creditCard.ccName = "Peter";
+		console.log(creditCard.ccName);
+		console.log("      ");
+		
+		
+		//Use Define Property For Accessor property, benefit is that it allows to modify properties on existing object.
+		
+		/*
+		Object.defineProperty(creditCard, "cardNo",
+		{
+			
+			get: function(){
+				return this._cardNo;
+			},
+			set: function(value){
+				this._cardNo = value;
+			},
+			
+			enumerable: true,
+			configurable: true
+			
+		});
+		*/
+		
+	
+		Object.defineProperties(creditCard, 
+		{
+			
+			_cardNo:{
+				value:"123456789",
+				enumerable:true,
+				configurable:true,
+				writable:true
+			},
+			
+			
+			cardNo:{
+				get: function(){
+					return this._cardNo;
+				},
+				set: function(value){
+					this._cardNo = value;
+				},
+				enumerable:true,
+				configurable:true,
+				
+			}
+			
+		});
+		
+		console.log("Printing the creditCard Number: ");
+		console.log(creditCard.cardNo);
+		console.log("      ");
+		
+		console.log("Updated the creditCard Number: ");
+		creditCard.cardNo = "987654321";
+		console.log(creditCard.cardNo);
+		console.log("      ");
+	</script>
+</head>
+
+<body/>
+</html>

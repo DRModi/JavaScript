@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title> Arrow Function! </title>
+	<script>
+		var hello = ()=>console.log("Hello!");
+		
+		hello();
+		
+		var helloGreet = (name, time) => {
+			let greet;
+			
+			if(time>4 && time<12){
+				greet = 'Good Morning!';
+			}else if (time>=12 && time<17){
+				greet = 'Good Afternoon!';
+			}else if (time>=17 && time<20){
+				greet = 'Good Evening!';
+			}else{
+				greet = 'Good Night!';
+			}
+			
+			return greet + " " +name;
+		}
+		
+		console.log(helloGreet('peter',12));
+	</script>
+</head>
+
+<body/>
+</html>

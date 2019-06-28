@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Object Data Property</title>
+	
+	<script type="text/javascript">
+		
+		var creditCard = {};
+		
+		Object.defineProperty(creditCard, "nameOnCard",
+		{
+			value: "Peter"
+			
+			//     /* comment this out to see by default values while we define the attributes using value:
+			,
+			enumerable: true,
+			configurable: true,
+			writable: true
+			//     */
+		});
+		
+		
+		
+		console.log("nameOnCard" in creditCard);
+		console.log(creditCard.propertyIsEnumerable("nameOnCard"));
+		
+		console.log(creditCard.nameOnCard);
+		creditCard.nameOnCard = "Bob";
+		console.log(creditCard.nameOnCard);
+		
+		delete creditCard.nameOnCard;
+		console.log("nameOnCard" in creditCard);
+		
+		
+	</script>
+
+</head>
+
+<body/>
+</html>

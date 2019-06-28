@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>Object Property Attributes</title>
+	<script type="text/javascript">
+		
+		var creditCard = {
+			name: "Peter"
+		};
+		
+		//Define enumerable attributes on "name" property of object creditCard.
+		Object.defineProperty(creditCard, "name",
+		{
+			enumerable: false
+		});
+		
+		console.log("name" in creditCard);
+		console.log(creditCard.propertyIsEnumerable("name"));
+		
+		//Define configurable property to false, so that property wont be modify
+		
+		Object.defineProperty(creditCard, "name", 
+		{
+			configurable: false
+		});
+		
+		delete creditCard.name;
+		
+		console.log("name" in creditCard);
+		console.log(creditCard.name);
+		
+		Object.defineProperty(creditCard, "name",
+		{
+			configurable: true
+		});
+		
+	</script>
+</head>
+
+<body/>
+
+
+</html>

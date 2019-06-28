@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Map!</title>
+	<script>
+		
+		var scores = new Map([["maths",95],["physics",90],["english",80]]);
+		
+		
+		//var scores = new Map(); // Also can be initialized as shown above.
+		
+		//size
+		console.log("map size - before adding any entry");
+		console.log(scores.size);
+		
+		//scores.set("maths",95);
+		//scores.set("physics",90);
+		//scores.set("english",80);
+		//scores.set("english",70);
+		
+		scores.set("computer",100);
+		
+		console.log("map size - after adding entry");
+		console.log(scores.size);
+		
+		//using Loop for-of iterating map
+		//Using keys
+		console.log();
+		console.log("Using Key Iterating");
+		for(let key of scores.keys()){
+			console.log(key);
+			console.log(scores.get(key));
+		}
+		
+		
+		console.log();
+		console.log("Retrieving - Value, Iterating");
+		//Using values
+		for(let value of scores.values()){
+			console.log(value);
+		}
+		
+		console.log();
+		console.log("Retrieving - Entries, Iterating");
+		
+		//Using Entries - Retrun array
+		for(let entry of scores.entries()){
+			console.log(entry[0],entry[1]);
+		}
+		
+		console.log();
+		console.log("Retrieving - Entries - Using Array DeStructring, Iterating");
+		
+		//Using Array - De Structuring
+		
+		for(let [key,value] of scores.entries()){
+			console.log(key,value);
+		}
+		
+		
+	</script>
+</head>
+	
+<body/>
+</html>

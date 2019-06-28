@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>ObjectMethod</title>
+	<script type="text/javascript">
+	
+	var studentObj = {
+		id:1,
+		name:"Bob",
+		display: function(){
+			document.write("Student ID : "+studentObj.id + "<br/>"+ "Student Name : "+studentObj.name);
+			//here properties like ID and Name are tightly coupled with the student object.
+		}
+	};
+	
+	studentObj.display();
+	</script>
+</head>
+<body>
+</body>
+</html>

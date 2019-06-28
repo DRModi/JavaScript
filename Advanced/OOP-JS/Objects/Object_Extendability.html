@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>Object Extendability</title>
+	<script type="text/javascript">
+
+		var product = {
+			name: "iMac"
+		};
+		
+		console.log("Object.isExtensible(product)");
+		console.log(Object.isExtensible(product));
+		
+		Object.preventExtensions(product);
+		
+		console.log("Object.preventExtensions(product)");
+		console.log(Object.isExtensible(product));
+		
+		product.price = "2500";
+		
+		console.log("price in product");
+		console.log("price" in product);
+		
+		product.description = function(){
+			return "it is an desktop all in one computer";
+		};
+		
+		console.log("description in product");
+		console.log("price" in product);
+		
+		var descriptor = Object.getOwnPropertyDescriptor(product, "name");
+		
+		console.log("descriptor.configurable");
+		console.log(descriptor.configurable);
+		
+		console.log("     ");
+		
+		product.name="Mac Book Pro";
+		console.log(product.name);
+	
+	
+	// ----------------------- Sealed
+	
+		console.log("     ");
+		console.log("     ");
+		console.log("   ---  SEAL START   ---  ");
+	
+		var creditCard = {
+			name: "Peter"
+		};
+		
+		console.log("Object.isExtensible(creditCard)");
+		console.log(Object.isExtensible(creditCard));
+		
+		
+		console.log("Object.isSealed(creditCard)");
+		console.log(Object.isSealed(creditCard));
+		
+		Object.seal(creditCard);
+		
+		console.log("After Seal - Object.isExtensible(creditCard)");
+		console.log(Object.isExtensible(creditCard));
+		
+		
+		console.log("After Seal - Object.isSealed(creditCard)");
+		console.log(Object.isSealed(creditCard));
+		
+		creditCard.credit = "2500";
+		
+		console.log("credit in product");
+		console.log("credit" in creditCard);
+		
+		creditCard.description = function(){
+			return "it is business card";
+		};
+		
+		console.log("description in creditCard");
+		console.log("price" in creditCard);
+		
+		var descriptor = Object.getOwnPropertyDescriptor(creditCard, "name");
+		
+		console.log("After seal - descriptor.configurable");
+		console.log(descriptor.configurable);
+		
+		
+		console.log("     ");
+		
+		creditCard.name="John";
+		console.log(creditCard.name);
+		
+		
+		
+		// ------------------- Freeze
+	
+		console.log("     ");
+		console.log("     ");
+		console.log("   ---  Freeze START   ---  ");
+	
+		var Car = {
+			name: "Tesla Model S"
+		};
+		
+		console.log("Object.isExtensible(Car)");
+		console.log(Object.isExtensible(Car));
+		
+		
+		console.log("Object.isSealed(Car)");
+		console.log(Object.isSealed(Car));
+		
+		console.log("Object.isFrozen(Car)");
+		console.log(Object.isFrozen(Car));
+		
+		Object.freeze(Car);
+		
+		console.log("After Freeze - Object.isExtensible(Car)");
+		console.log(Object.isExtensible(Car));
+		
+		
+		console.log("After Freeze - Object.isSealed(Car)");
+		console.log(Object.isSealed(Car));
+	
+		console.log("After Freeze - Object.isFrozen(Car)");
+		console.log(Object.isFrozen(Car));
+		
+		Car.price = "2500";
+		
+		console.log("price in car");
+		console.log("price" in Car);
+		
+		Car.description = function(){
+			return "it is best sedan car";
+		};
+		
+		console.log("description in car");
+		console.log("price" in Car);
+		
+		var descriptor = Object.getOwnPropertyDescriptor(Car, "name");
+		
+		console.log("After Freeze - descriptor.configurable");
+		console.log(descriptor.configurable);
+		
+		
+		console.log("     ");
+		
+		Car.name="Model X";
+		console.log(Car.name);
+		
+	</script>
+	
+</head>
+
+<body/>
+</html>

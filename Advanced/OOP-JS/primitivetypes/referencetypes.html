@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Reference Type</title>
+		<script type="text/javascript">
+		
+			var obj1 = new Object();
+			let obj2 = obj1;
+			
+			obj1.myProperty = "Hard work beats telant, when telant fails to work hard!"
+			
+			document.write("<b>"+obj2.myProperty+"</b> <br/> <br/>");
+			
+			obj1=null;
+			obj2=null;
+			
+			//inBuilt objects initialization:
+			var products = new Array();
+			var date = new Date();
+			var error = new Error("Something went wrong!");
+			var myFunc = new Function("document.write('Hello World!')");
+			var regex = new RegExp("/^[A-Za-z0-9]+$/");
+			
+			
+			//using literals
+			var student = {
+				"name":"Marggie",
+				"score":99.99
+			}
+
+			var student1 = new Object();
+			student1.name = "John";
+			student1.score = 99.95;
+			
+			document.write("Student Name: <b>"+student.name+"</b>"+ " - Score is : <b> "+student.score+"</b> <br/>");
+			document.write("Student1 Name: <b>"+student1.name+"</b>"+ " - Score is : <b> "+student1.score+"</b> <br/> <br/>");
+			
+			var studentNames = ["Margie","John","Dave"];
+			document.write("Student Name: <b>"+studentNames[0]+"</b>"+ " Student1 Name: <b>"+studentNames[1]+"</b>"+" Student2 Name: <b>"+studentNames[2]+"</b>"+"<br/> <br/>");
+			
+			//Using literals function
+			
+			function validateFunc(number){
+				if(num>5){
+					document.write("it is more than 5");
+				}else{
+					document.write("it is more than 5");
+				}
+				
+			}
+			
+			//find out type of objects using typeof
+			document.write("<b>Using type of: </b> <br/>");
+			document.write("Single Student Object : <b> "+typeof student+"</b><br/>");
+			document.write("Array of Student Names : <b> "+typeof studentNames+"</b><br/>");
+			document.write("Function Name : <b> "+typeof validateFunc+"</b><br/> <br/>");
+			
+			//find out type of objects using instanceof
+			document.write("<b>Using Instance of: </b> <br/>");
+			document.write("Single Student Object : (student instanceof object) : <b> "+(student instanceof Object)+"</b><br/>");
+			document.write("Array of Student Names : (studentNames instanceof Array ) : <b> "+(studentNames instanceof Array )+"</b><br/>");
+			document.write("Function Name : (validateFunc instanceof Function ) : <b> "+(validateFunc instanceof Function )+"</b><br/> <br/>");
+			
+			document.write("Array of Student Names : (studentNames instanceof object ) : <b> "+(studentNames instanceof Object )+"</b><br/>");
+			document.write("Function Name : (validateFunc instanceof object ) : <b> "+(validateFunc instanceof Object )+"</b><br/> <br/>");
+			
+			document.write("Single Student Object : (student instanceof Array) : <b> "+(student instanceof Array)+"</b><br/>");
+			document.write("Function Name : (validateFunc instanceof Array ) : <b> "+(validateFunc instanceof Array )+"</b><br/> <br/>");
+			
+			
+			var quote = "Arise awake and work till you reached your goal!"
+			
+			var subQuote = quote.substring(16,47);
+			
+			document.write("<b>"+subQuote+"</b> <br/>");
+			document.write("subQuote instanceof String : <b>"+(subQuote instanceof String)+"</b> <br/>");
+			document.write("type of subQuote : <b>"+(typeof subQuote)+"</b> <br/>");
+			
+			document.write("quote instanceof String : <b>"+(quote instanceof String)+"</b> <br/>");
+			document.write("type of quote : <b>"+(typeof quote)+"</b> <br/>");
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

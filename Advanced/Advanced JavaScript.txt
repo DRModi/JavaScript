@@ -1,0 +1,427 @@
+											"Jay Shree Ganeshay Namh:"
+												"Jay Mataji!"
+											
+											"OOP JavaScript Concepts"
+
+											
+Primitive and Reference Types:
+*******************************
+- It is become more popular due to  the flexibility it offers.
+- It doesnt support  the direct structure like class and packages like other object oriented language .. java and .net
+- Everything including functions are objects in javascript.
+-  the power of JS objects is that, it allows to add and delete the properties at any point in time.
+
+(1) Primitive Types: Simple Data
+(2) Reference Types: Refer objects in memory.
+
+(1) Primitive Types: It store values directly inside them. (no reference to memory)
+	Number - contains number, 
+	String - contains single character or string of character, 
+	Boolean - contain true or false, 
+	Null - contain only one value called Null, 
+	Undefined - un-initialized variables value would be undefined automatically.
+
+	Note: since everything is variable (var) in JS primitive type, use "typeof" to know  the stored type for that perticular variable. it works
+	except null. Best way to check  the null is (= = = )
+
+	- So workaround is use "===" (triple equealto operator). it basically compare  the datatype and not  the content. I mean in javascript
+	  so if var x=123 and y="123", and if you compare using == (double equal to than result will be true though it is not  the same type),
+	  but in this case if (===) being used  then it will result into false since it will compare  the type not  the value.
+	
+	- Primitive type have  the methods: 
+		- String type have, toLowerCase(), toUpperCase(), substring(), charAt(), etc..
+		- Number type has, toString() to convert  the type in String
+		- Boolean type has,  the same toString() to convert  the type in string.
+
+
+(2) Reference Types: it something close to class in other programming language, using reference type object will be created.
+	- Objects are made of properties which has name and value key pair, where key name is always string but value could be any data, function or another object.
+	
+	- functions have to be invoked using object to execute.
+	
+	- Clean up object - memory footprint: JS engine will clean up automatically once null is assigned to objects at  the end. means obj1 = null;
+	
+	- instanceof, which is being used to validate  the type of object (means, it is an array or function or object). 
+	  syntax: "object which needs to be compare" instanceof " the system object type (means Array, Function, Object..etc)
+	
+	- Wrapper Type: JS engine has  the wrapper type for three primtive type (string, number and boolean) which has inbuilt function.
+	  Also JS doesnt allow to add 
+	  
+	  
+
+Functions:
+***********
+	- Functions in java scripts are object..
+	-  the key difference between function and other objects is that, it has the additional property is [[call]].
+	- It is  the central point in JS, two way to define  the function in JS 
+		(1) Declarion way
+				function funName(optional argument){
+					function body;
+				}
+		Note: Function hoisting supported by only declaration way only. means reference of function or invoke of  the function before 
+			even declaring  the function.
+		
+		
+		(2) Expression way - best practice, it should end with semicolon (;)
+				var funName = function(optional argument){
+					function body;
+				};
+	- Functions are powerful and are used as reference variable, or it can be assigned to ano ther variable and  the same variable can be used inside another function.
+	- Function can be invoked using more than defined input/named parameter/arguments.
+	- Since Function is also an object it Java script - it has properties, one main useful one is ".length" (will retun named/defined parameter for  the given function.
+		example function funName(arg1, arg2), now if you do funName.length will return 2 (which are the named parameter)
+		
+	- Usign Arguments - retreive all  the parameter which is being used to invoke  the function other than  the defined/named one.
+		example 
+			function funName(arg1, arg2){
+				document.write(arguments.length);
+			}
+			Now lets Function invoked like funName(arg1, arg2, arg3, arg4)
+			so if you do arguments.length WITHIN function, will return 4 (which are more than the named parameter and they are 2 arg1 and arg2)
+	- Function will use only  the named/defined input parameters position values, i mean if we expectd 1 args, and function invoked with 3 args  then JS engine will take 
+	  only  the first position argument. if it 2 args  then first 2 position args will be considered.
+	- In case of function overloading,  the last defined function in script being consider for execution, irrespective of not matching  the definitions of  the function declarion.
+	  >> so resolution is that, iterate through arguments and have  the all logic for different inputs (based on  the length of entered input) into  the last function with if and else loop.
+	  >>> resolution is if requirement such, where you need function overloading  then, define one function only and have seperate logic for length of input arguments within  the same function.
+	  >>> Another way is to define parameter name in function and based on that, inside body check that input parameter is undefined and based on that have an logic inside body.
+	  
+	- Object Method: Define object using method structure. 
+	
+	- This keyword usage: can used decoupled properties/functionality of perticular object and can 	
+	  be used with other objects.
+	  
+	  So with "This" keyword we noticed that JS will apply independent function properties to the object that is invoking the method which uses "this" keyword. In this case, the function which was constucted using "this" keyword has to refer as Object property. Student -> Disply: DisplayProperties.
+	
+	
+	- JS Engine offers: three other methods which allow to use JS OOP language
+		Call()
+		Apply()
+		Bind()
+	
+		Call Method:
+		------------
+		- In Call method: object need not required to refer the function as its own property to use.
+		- The function with this keyword directly tie to the object using "Call(arg1)". 
+		- Call method contain object as first argument and it can contain any additional arguments
+		  as well.
+		
+		Apply Method:
+		-------------
+		- Apply method is very simillar to Call, and only one difference is that it takes argument as an array (where in call method, arguments can individually passed) 
+		
+		Call(object, arg1, arg2, arg3)
+		Apply(object, [arg1, arg2, arg3])
+		
+		Bind Method:
+		------------
+		It is similar to Call and Apply but it requires to assign a function variable. as described below:
+		
+		Here function is with 2 Argument
+		
+		
+		var varObject = functionName.bind(object);
+		varObject(arg1Value, arg2Value);
+		
+		Also can be represented as below:
+		
+		var varObjectWithArgs = functionName.bind(object, arg1, arg2);
+		varObjectWithArgs();
+				
+		We can assign the variable (funNameVar) to another function variable.
+		
+		var varObject1 = functionName.bind(object1, arg1);
+		varObject1();
+		
+		varObject1.FunctionName = varObject(arg1Value, arg2Value);
+
+Objects:
+--------		
+	- AS we know two ways of creating object 
+		- Literal way like var objectName = { define properties here };
+		- Using new keyword like var objectName = new Object();
+	- Internally JS engine will call "Put" method when object properties are added
+	- Internally JS engine will call "Set" method when object existing properties are updated
+	- Internally JS engine will call "Delete" method when existing properties are deleted
+	
+	Properties Check:
+	- it can be done by using "in" operator. To check that we can print console log
+		cosole.log("propertyName" in ObjectName);
+	- Having said that, in JS created Object can inherit the property from the main Object and can be available for the creted Object, so when upon checking with "in" operator it will return true.
+	
+	So there is one more operator to check that perticular property is owned by object it self or it is being inherited.
+		console.log("toString" in course); // result will be true, since this property is from
+										Object and every object is inherit main Object functionality
+										
+		console.log(course.hasOwnProperty("toString")); //will result into false, since it is not
+															owned by course object.
+	Retrieve All the Property:
+	- Loop eachProperty in Object
+	 two ways 
+		(1) for(var eachProperty in ObjectName)
+		(2) Retrieve all using Object.keys(objectName) method - will give Array back
+	
+	- PropertyIsEnumerable: it will allow to check that properties on the object are enumerable or not. Object in-built properties are not enumerable like Array object contain Length property
+		objectName.propertyIsEnumerable("propertyName");
+		
+	- Accessor and Mutator (In java world kind encapsulation (getter and Setter))
+		In JS, accssor will define like below
+			
+			var ObjectName = {
+			_PropertyName: "valueOfTheProperty" (the underscore "_" is required to make it private)
+			
+			get retrieveName{
+				return this._PropertyName;
+			}
+			
+			set setterName(value){
+				this._PropertyName = value;
+			}
+		}
+		
+		So this object property will be retrieved like objectName.retrieveName and the property can be updated by setterName(updatedValue) 
+		
+		If there are no set method then it will be read only and vice versa if no get then its only write only but not readable.
+		
+		Generally it will be used if we want to do some calculation or some logic need to be compute before accessting this property so that you can not running the logic without need.
+	  
+	- Define Property : Property Attributes: After ES5, it is allowed to setup property attributes.
+		
+		Enumerable: updating default option true to false with Object.defineProperty 
+				Object.defineProperty(ObjectName, "PropertyName" , { enumerable: false});
+		Configurable: By default is true, means we can modify the property (delete it), but once you mark it false then you can not modify it. Also it wont allow to be reset to true.
+				Object.defineProperty(ObjectName, "PropertyName" , {configurable: false});
+	  
+		Value: if object proeperties / Data Properties are define through defineProperties with "value" then by default, Enumerable, Configurable and writable are false. "value" can be used to define initial value.
+		
+		Accessor  Properties: accessor properties can be defined through define property. The advantage is that it allowe accessor (get/set) properties to be configured on existing object without changing the object defination.
+	
+	- To retrieve Property Value:
+		Object.getOwnPropertyDescriptor(objectName, "PropertyName")
+	
+	- Extensible, three way 
+		(1) Non extensible - Property called preventExtensions:
+				Object.preventExtensions(ObjectName);
+			
+			to check it is extensible is 
+				Object.isExtensible(ObjectName);
+				
+			Thought its not extendable after preventing, but It is configurable.
+			Still we can update existing property values.
+			
+				
+		(2) Seal it - It means non of the property is configurable.
+			
+			Object.sealed("objectName")
+			
+			to check it is sealed
+				Object.isSealed(ObjectName);
+		
+			In sealed it is not configurable.
+			Still we can update existing property values.
+			
+		(3) Freeze it - it means all the property is read only.
+	
+
+
+Constructors :
+--------------
+	 - In JS, Constuctor is basically function, using which we can create multiple objects.	
+		just like inbuilt type like var intArray = new Array();,  var localDate = new Date();
+	-  We can also define our own constructors which are nothing but functions to create our own objects. Once we define a constructor with some
+		properties and functions/methods in it, then we can create any number of Object using that constructor and all the object will have same number of properties and methods.
+	- It will have fomate like:
+			
+				function NameOfConstructorStartWithCapitolLetter(){ //can have an argument as well.
+				}
+			the diff between regular function and the constructor function is the first letter of Name which will be Capitol for Constructor.
+			
+			Note: can be checked using instanceof property. Also using constructor property, ObjectName.constructor === constructorName. But more popular way is instanceof
+	
+	- The whole purpose of defining constructor is to have similar properties on multiple objects.
+
+  
+Prototype: Advantage is saving memory by not having created all prototypes in memory while creating object from constructor.
+-------------------------
+	- In JS, Prototype is a property defined under Object/constructor which can inturn contains variable/property functions that are shared by all the object created using this constructor.
+	
+	How to define: 
+	(1)
+		ConstructorName.prototype.MethodNameWhichNeedToBeCreatedAsPrototype = function(){logic};
+	
+	(2) Literal Way : Make sure to define as constructor otherwise it will failed in instance of comparision.
+	
+		ConstructorName.prototype = {
+				
+				constructor: ObjectName, //Require to define constructor property wehenever literal sysntex being used otherwise it would be considered as another object. 
+				
+				MethodNameWhichNeedToBeCreatedAsPrototype: function(){ logic
+				},
+				
+				MethodNameWhichNeedToBeCreatedAsPrototype2: function(){ logic
+				},
+				....
+				MethodNameWhichNeedToBeCreatedAsPrototype: function(){ logic
+				}
+		
+		};
+	
+	- Note: we can define prototype for in-built object as well. example.
+		String.prototype.display = function(){ console.log(this);};
+		
+		"InvokeString".display;
+
+Inheritance:
+-------------
+ - By deafault, all objects are inherting the properties from the main parent object called "Object" like "hasOwnProperty", "toString", "valueOf" ..etc.
+ - Inheritance will be achieved through Object.create method.
+	
+		var childObjectName = Object.create(parentObjectName, {
+				parentProperty: {
+					configurable: enumerable, value, writable .... etc
+				}
+				childProperty:{
+				}
+				..... etc
+		});
+
+- Constructor inheritance can be achieved using prototype	
+
+
+Patterns:
+---------
+	- Module Pattern: IIFE (immediately invoked function expressions) 
+	noticed the () at the end, which means invoked immediately and object which was created by function will be added to myObject
+	
+		> it is like creating anonymous function which includes private variable and privillaged methods which can accessed 
+		these private variables, and return the object with all privillaged methods, Following is the syntax:
+		
+		var myObject = (function(){
+			
+			//private data variables //private variables and are accessed within this function and exposed using below 
+									  return object with public methods
+			
+			return{
+				//public methods and properties  //it is called privillaged methods
+			};
+		
+		
+		}());
+		
+	- Revealing Module Pattern:
+		In this function can be defined using Declarion way and refer function names in return object.
+
+		
+ECMA Script 6 (ES6) Features:
+-------------------------
+
+	Scope: let 
+	-----------
+		> till ES5, there were two scope for variable (1) Global and (2) Function, using "var" keyword
+		> In ES6, newly introduced the Block scope, using "let" keyword
+			like in for loop we use (var i which is kind of whole function scope.
+		
+	Const:
+	---------
+		> const is used to define constant variable and will not allowed the value of that variable to be updated 
+		> it will have block scope
+		> if it is use to define object then Object can not be re-assigned but more properties can be added
+			to that object.
+	
+	Template String:
+	----------------	
+		> Using backtick operator (`), to write multiple line of string.
+		> Variable subtitution also supported.
+		
+	Arrow Function (=>)
+	--------------------
+		> Sytax:
+			(1) var doubleMe = (number)=>number*2;
+			(2) var varName = (arg1, arg2)=>{return logic;}
+			
+	Destructuring:
+	--------------
+		> Object
+			var {objectProperty1:OptionalVarName1, objectProperty1:OptionalVarName2, ... } = objectName;
+		
+		> Array
+			var [varName1, varName2,...] = ArrayName;
+			
+		> Function
+			function ({var1 = defaultValueInCaseWantToDefine, var2, var3 }){
+				logic
+			};
+		
+		> Loop:
+			Existing ForEach and ForIn dont allow break, continue 
+			ForEach - for arrays
+			ForIn - For properties with in Attributes
+			//New ES6
+			For-Of - allow break, continue,
+	Map:
+	----
+		> syntax	
+			(1)	var mapName = new Map();
+				mapName.set(key,value);
+			
+			(2) var mapName = new Map([[key1,value1], [key2,value2], ...]);
+			
+			Default Properties:
+				set, get, size, has, delete, clear..etc
+	
+	Set:
+	----
+		> allow unlimited unique value to be stored 
+		> syntax
+			(1) var setName = new Set();
+				setName.add(value);
+			
+			(2) Chaining add methods
+				var setName = new Set().add(value).add(value1)......;
+			
+			(3) Initialize
+				var setName = new Set(["value", "value1", ....]);
+				
+				Default Properties:
+				add, size, has, delete, clear..etc
+				
+	Class:
+	------
+		> class keyword used
+			syntax:
+				class className{
+					constructor(define data property)
+					{
+						initialize them
+					}
+					
+					defineFunctionProperty{
+						logic.
+					}
+				}
+	
+	Promises:
+	---------
+		> In general, promise is something like Placeholder for something which can be done in future.
+		> ES6, Promises is used for asynchronous functionality. Before ES6, it was achieved through callback functions.
+		
+		Syntax:
+			let promiseVariableName = new Promise(InnerFunction{Logic});
+			let promiseVariableName = new Promise((resolve, reject)=>{Logic}); //General Conventions
+			
+			usually surround with the function, so that promise can be return by that function.
+			
+			function asyncFunction(){
+				let promiseVariableName = new Promise((resolve, reject)=>{Logic}); //General Conventions
+				
+				return promiseVariableName;
+			}
+			
+			Handling response:
+			
+			asyncFunction().then(successResponseFuncHandling, ErrorResponseFunctionHandling); //general syntax to handle the promise response.
+			
+	Modules:
+	---------
+		> it allows to refer functionalities of othe .js file to another .js file.
+		> Not all the browser supporting it. So mor CORS (cross reference site issues)
+		

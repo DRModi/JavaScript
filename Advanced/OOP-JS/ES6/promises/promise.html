@@ -1,0 +1,43 @@
+<html>
+<body>
+	<title>Promises</title>
+	
+	<script>
+	//Usually wrapped with function and it will return the promise.
+	function myAsynchFunction(){
+	console.log("Inside the function");
+		let promise = new Promise((resolve,reject)=>{
+			// setTimeOut = (func-logic, wait period in ms 1000); General Syntax for setTimeOut
+			let error = true; //forcefully generating error to test failed condition
+			setTimeout(()=>{
+					console.log("Being printed after 1 second - Asynchronously!");
+				if(error)
+				{
+					reject("Error occurred!");
+				}else{
+					resolve("Successful!");
+				}
+			},1000);
+		});
+	
+	console.log("End of the function");
+	//console.log(promise);	
+	return promise;
+		
+	
+	}
+	
+	//Call the function which returns promise and handle the respose using //.then(succResHandleFunc,errorResHandleFunc)
+	
+	myAsynchFunction().then(
+							(resolveParam)=>{console.log("Asynch Call - " +resolveParam)}, 
+							// Using catch block, we can catch the error.
+							//(rejectParam)=>{console.log("Asynch call Failed - "+rejectParam)}
+							
+							).catch( //another way of catching the errors
+								(rejectParam)=>{console.log("Asynch call Failed - "+rejectParam)} 
+							);
+	</script>
+
+</body>
+</html>

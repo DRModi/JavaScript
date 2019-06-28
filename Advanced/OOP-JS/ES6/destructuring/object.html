@@ -1,0 +1,52 @@
+<html>
+<body>
+
+<script>
+	
+	var student = {
+		firstName: "Peter",
+		lastName: "Lenci",
+		Score: 98
+	};
+
+	//Traditional way - Before ES6
+	var fName=student.firstName;
+	var lsName = student.lastName;
+	var scor = student.Score;
+	
+	console.log("Before ES6");
+	console.log(fName);
+	console.log(lsName);
+	console.log(scor);
+	
+	
+	var student1 = {
+		firstName: "Mark",
+		lastName1: "Wood",
+		Score1: 95
+	};
+	
+	let {firstName:firstName, lastName1:lastName1, score1:Score1} = student1;
+	
+	
+	console.log("After ES6");
+	console.log(firstName);
+	console.log(lastName1);
+	console.log(Score1);
+	
+	var student2 = {
+		FirstName: "Mark",
+		LastName: "Wood",
+		Score2: 95
+	};
+	
+	let {FirstName,LastName,Score2} = student2;
+	
+	console.log("After ES6");
+	console.log(FirstName);
+	console.log(LastName);
+	console.log(Score2);
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Constructor HTML</title>
+	<script type="text/javascript">
+
+		//define constructor
+		function Area(){
+		}
+		
+		var Triangle = new Area; //it is fine without "()" at the end since it doesnt have any args.
+		var Square = new Area();
+		
+		console.log("Triangle instanceof Area"); //most popuplar way to check it is instance of the constructors
+		console.log(Triangle instanceof Area);
+		
+		
+		
+		console.log("Square.constructor === Area");
+		console.log(Square.constructor === Area);
+		
+		
+				
+		//define constructor
+		function Vehical(makeModel, capacity){
+			this.makeModel = makeModel;
+			this.passangerCapacity = capacity;
+			
+			this.display=function(){
+				console.log("Make and Model : ");
+				console.log(this.makeModel);
+				console.log("Passanger Capacity :");
+				console.log(this.passangerCapacity);
+			};
+		
+		}
+		
+		var Car = new Vehical("Honda Accord", "5"); 
+		var Bus = new Vehical("TATA", "55");
+		
+		console.log("Car instanceof Vehical"); //most popuplar way to check it is instance of the constructors
+		console.log(Car instanceof Vehical);
+		
+		//Invoke method
+		Car.display();
+		
+		
+		console.log("Bus.constructor === Vehical");
+		console.log(Bus.constructor === Vehical);
+		
+		//Invoke method
+		Bus.display();
+		
+	</script>
+</head>
+
+<body/>
+</html>

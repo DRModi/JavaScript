@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Inheritance</title>
+	<script	type="text/javascript">
+		
+		var project = {
+			name: "Computer Science",
+			display: function(){
+				console.log("Project Name:  ");
+				console.log(this.name);
+			}
+		};
+		
+		var p1 = Object.create(project,{
+			name: {
+				value: "DS and ALGO",
+				configurable: true,
+				enumerable: true,
+				writable: true			
+			}
+		});
+	
+		
+		project.display();
+		p1.display();
+	</script>
+</head>
+
+<body/>
+</html>

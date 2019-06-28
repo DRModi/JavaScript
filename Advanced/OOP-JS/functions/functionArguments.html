@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>ArgumentsWithoutDefined</title>
+		<script type="text/javascript">
+			function findOddOrEvenDeclaration(arg){
+			
+				document.write("Length of arguments : <b>" + arguments.length +"</b> </br>");
+				document.write("Index 0 of arguments : <b>" + arguments[0] +"</b> </br>");
+				document.write("Index 1 of arguments : <b>" + arguments[1] +"</b> </br>");
+							
+				document.write(" number of Defined/Named expected arguments of the functions : <b>" + findOddOrEvenDeclaration.length +"</b> <br/>  <br/>");
+				
+				if((arg%2)==0){
+					return "Declration Given Number : "+arg+" is an <b> Even Number! </b>";
+				}else{
+					return "Declaration Given Number : "+arg+" is an <b> Odd Number! </b>";
+				}
+			}
+			document.write(findOddOrEvenDeclaration(11, 10) + "<br/><br/>");
+			document.write(findOddOrEvenDeclaration(2014, 2019, 2021) + "<br/>");
+			document.write("<br/><br/>");
+		
+		
+		
+			function findResultMult(){
+				var result = 1;
+				
+				for(var i=0;i<arguments.length;i++){
+					result = result * arguments[i];
+				}
+				
+				return result;
+			}
+			
+			
+			document.write("findResultMult(11, 10) : " + findResultMult(11, 10) + "<br/>");
+			document.write("findResultMult(20,10,2) : "+findResultMult(20,10,2) + "<br/>");
+			document.write("findResultMult(20) : "+findResultMult(20) + "<br/>");
+			
+			document.write("findResultMult() : "+findResultMult() + "<br/>");
+			
+			document.write("<br/><br/>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

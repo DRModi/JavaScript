@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Object Creation</title>
+	<script type="text/javascript">
+	
+		var course1 = {
+				name: "DS and Algo" //Internally [[PUT]] method being used
+			};
+			
+		var course2 = new Object();
+		course2.name = "Java Spring"; //Internally [[PUT]] method being used
+		
+		course1.name = "DataStructure and Algorithm"; //Internally [[SET]] method being used
+		course1.description = "Basic of computer science"; //Internally [[PUT]] method being used
+		
+		console.log("Printing if name is valid property for Course!");
+		console.log("name" in course1);
+		
+		console.log("		");
+		
+		console.log("Printing if description is valid property for Course!");
+		console.log("description" in course1);
+		
+		console.log("		");
+		
+		
+		console.log("RETRIEVE - Retrieve all property for Course!");
+			for(var eachProp in course1){
+			console.log(eachProp); //will return property name
+			console.log(course1[eachProp]); //will return property value
+			console.log("		");
+		}
+	
+		console.log("		");
+		
+		
+		console.log("RETRIEVE - Using Object.keys Retrieve all property for Course!");
+			
+		var allProps = Object.keys(course1);
+		
+		for(var i=0;i<allProps.length;i++){
+			console.log(allProps[i]); //it will return keys
+			console.log(course1[allProps[i]]); //it will return property value
+			console.log("		");
+		}
+		
+		console.log("		");
+		
+		console.log("RETRIEVE - Using Direct For Loop Retrieve all property for Course!");
+		
+			for(var eachProp in course1){
+			console.log(eachProp); //will return property name
+			console.log(course1[eachProp]); //will return property value
+			console.log("		");
+		}
+		
+		
+		
+		delete course1.description;
+		
+		console.log("After DELETE - Printing if description is valid property for Course!");
+		console.log("description" in course1);
+		
+		console.log("		");
+		
+		console.log("Printing if NAME is valid property for Course!");
+		console.log("NAME" in course1);
+		
+		console.log("		");
+		
+		console.log("Printing if toString is valid property for Course!");
+		console.log("toString" in course1);
+		
+		console.log("		");
+		
+		console.log("Printing if toStrin hasOwnProperty - is valid property for Course!");
+		console.log(course1.hasOwnProperty("toString"));
+
+		console.log("		");
+		
+		console.log("Property Name is Enumerable or not! : Course!");
+		console.log(course1.propertyIsEnumerable("name"));
+		
+		console.log("		");
+		
+		console.log("Property default toString is Enumerable or not! : Course!");
+		console.log(course1.propertyIsEnumerable("toString"));
+		
+	</script>
+
+</head>
+
+<body/>
+</html>

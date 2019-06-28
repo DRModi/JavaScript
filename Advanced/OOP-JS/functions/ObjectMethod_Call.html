@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Object Method - Call</title>
+	<script type="text/javascript">
+		
+		function displayProperties(testsocre, testscore1){
+			document.write("Student ID : "+ this.id + "<br/>"+
+								"Student Name : " + this.name + "<br/><br/>");
+		}
+		
+		var student = {
+					id: 1,
+					name: "Bob"};
+					
+		var student1 = {
+					id: 2,
+					name: "Mark"};					
+		
+		//Global Scope
+		this.id = 3;
+		this.name = "Peter";
+		
+		//Using Call Method:
+		displayProperties.call(student);
+		displayProperties.call(student1);
+		displayProperties.call(); //Global Scope
+		displayProperties.call(this); //Global Scope
+		
+	</script>
+	
+</head>
+
+<body/>
+</html>

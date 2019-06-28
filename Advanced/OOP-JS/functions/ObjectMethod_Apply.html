@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Object Method - Apply</title>
+	<script type="text/javascript">
+		
+		function displayProperties(testscore, testscore1){
+			document.write("Student ID : "+ this.id + "<br/>"+
+								"Student Name : " + this.name + "<br/>" +
+								"Test Score : " + testscore + "<br/>" +
+								"Test Score 1 : " + testscore1 + "<br/> <br/>");
+		}
+		
+		var student = {
+					id: 1,
+					name: "Bob"};
+					
+		var student1 = {
+					id: 2,
+					name: "Mark"};					
+		
+		//Global Scope
+		this.id = 3;
+		this.name = "Peter";
+		
+		//Using Call Method:
+		displayProperties.call(student,85,82);
+		displayProperties.call(student1,95,92);
+		displayProperties.call(this,98,99); //Global Scope
+		
+		//Using Apply Method:
+		document.write(" --- Apply Method --- " + "<br/><br/><br/>");
+		displayProperties.apply(student, [85,82]);
+		displayProperties.apply(student1, [95,92]);
+		displayProperties.apply(this,[98,99]);
+		
+	</script>
+	
+</head>
+
+<body/>
+</html>

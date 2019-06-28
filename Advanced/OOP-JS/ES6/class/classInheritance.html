@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Class Inheritance</title>
+	
+	<script>
+		
+		class Tesla{
+		
+			constructor(make, model, year){
+				this.make = make;
+				this.model = model;
+				this.year = year;
+			}
+			
+			start(){
+				return "Start - Car with basic key fob";
+			}
+			
+			stop(){
+				return "Stop - Car with basic key fob";
+			}
+			
+		}
+	
+	class ModelS extends Tesla{
+		
+			constructor(make, model, year, type){
+				super(make, model, year);
+				this.type = type;
+			}
+			
+			start(){
+				return "Start - Car keyless";
+			}
+			
+		}
+	
+		class ModelX extends Tesla{
+		
+			constructor(make, model, year, type, door){
+				super(make, model, year);
+				this.type = type;
+				this.door = door;
+			}
+		
+			start(){
+				return "Start - Car KeyLess and Mobile App";
+			}
+			
+			stop(){
+				return "Stop - Car KeyLess and Mobile App";
+			}		
+		
+		}
+		
+		
+	let modelS = new ModelS("Tesla", "S", 2011, "Sedan");
+	console.log("Model S : ");
+	console.log(modelS);
+	console.log(modelS.start());
+	console.log(modelS.stop());
+	
+	let modelX = new ModelX("Tesla", "X", 2017, "SUV", "FalconWingsDoor");
+	console.log("Model X : ");
+	console.log(modelX);
+	console.log(modelX.start());
+	console.log(modelX.stop());
+
+	
+	</script>
+</head>
+<body/>
+</html>
