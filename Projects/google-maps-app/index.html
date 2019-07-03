@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DRM-GoogleMaps-App</title>
+	
+		<!-- CSS Link Tag-->
+	<link rel="stylesheet" href="./style.css" />
+	
+<head>
+
+<body>
+	<h1>My Google Map App</h1>
+	<div id="mapApp">
+	</div>
+	
+	<script>
+		
+		var marker;
+		
+		function initMap(){
+			const pleasantHillCoordinates = {lat: 37.9480, lng: -122.0608};
+			const walnutCreekCoordinates = {lat: 37.9101, lng: -122.0652};
+			const mountainViewCoordinates = {lat: 37.3861, lng: -122.0839};
+			const greensboroCoordinates = {lat: 36.0726, lng: -79.7920};
+			const milpitasCoordinates = {lat: 37.4323, lng: -121.8996};
+			
+			// Map options 
+			var options = {
+				zoom:8,
+				center: pleasantHillCoordinates
+				//mapTypeId: 'satellite'
+			};
+			
+			//New Map
+			var mapObject = 
+			new google.maps.Map(document.getElementById('mapApp'), options);
+			
+			
+			//create marker on map based on the click event on the map
+			google.maps.event.addListener(mapObject, 'click', function(event){
+				//addMarkers - which needs the properties - basic requirement is coordinate, and that will be available in event object.
+				addMarkers({coordinates: event.latLng});
+				
+			});
+			
+			//Added single marker with Animation, BeachFlagIcons and INformation Window.
+			marker = new google.maps.Marker({
+			  map: mapObject,
+				//draggable: true,
+			  animation: google.maps.Animation.DROP,
+			  position: pleasantHillCoordinates,
+			  icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+				
+			});
+			
+			//For animation toggleBounce
+			marker.addListener('click', toggleBounce);
+			
+			
+			//Adding information on click event.
+			var infoWindow = new google.maps.InfoWindow({
+				content: 'Pleasant Hill'
+			});
+			
+			marker.addListener('click', function(){
+				infoWindow.open(mapObject, marker);
+			});
+			
+		function toggleBounce() {
+			if (marker.getAnimation() !== null) {
+			  marker.setAnimation(null);			  
+			} else {
+			  marker.setAnimation(google.maps.Animation.BOUNCE);
+			}
+		
+		}
+			
+			
+			
+			
+			
+			/* //Instead of adding seperate - let add them in array
+			//Adding multiple markers
+				addMarkers({
+					coordinates: mountainViewCoordinates, 
+					iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+					animationDrop: true,
+					content: 'Google-FTJ'
+				});
+				addMarkers({coordinates: greensboroCoordinates, content: 'CH-GSO'});
+				addMarkers({coordinates: milpitasCoordinates, animationDrop: true, content:'FH-Milpitas'});
+				addMarkers({coordinates: walnutCreekCoordinates, iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png', content: 'FSJ-WC'});
+			*/
+			
+			
+			//Array of marker instead of creating seperate markers:
+			var arrMarkers = [
+			{
+				coordinates: mountainViewCoordinates, 
+				iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+				animationDrop: true,
+				content: 'Google-FTJ'
+			},
+			{
+				coordinates: greensboroCoordinates, 
+				content: 'CH-GSO'
+			},
+			{
+				coordinates: milpitasCoordinates, animationDrop: true, 
+				content:'FH-Milpitas'
+			},
+			{
+				coordinates: walnutCreekCoordinates, 
+				iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png', 
+				content: 'FSJ-WC'
+			}];
+			
+			
+			//Loop throught each marker and 
+			for(let i=0; i< arrMarkers.length; i++){
+				addMarkers(arrMarkers[i]);
+			}
+			
+			//Create function to add multiple markers
+			function addMarkers(props){
+				
+				var addMarker = new google.maps.Marker({
+					map: mapObject,
+					position: props.coordinates,
+					//icon: props.iconImage, // if there are no iconImage then it would be assign to undefined which is wrong. so better way to handle that is check for image
+					//animation: props.animationDrop //same as above iconImage
+				});
+				
+				//check for custom icon
+				if(props.iconImage){
+					//set icon
+					addMarker.setIcon(props.iconImage);
+				}
+				
+				//check for custom animation
+					if(props.animationDrop){
+					//set animation
+					addMarker.setAnimation(google.maps.Animation.DROP);
+				}
+				
+				//Add content
+				if(props.content){
+					let settingInfoWindow = new google.maps.InfoWindow({
+					content: props.content
+					});
+			
+					addMarker.addListener('click', function(){
+						settingInfoWindow.open(mapObject, addMarker);
+					});
+				}
+				
+			}
+		}	
+		
+ 
+	</script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjBKo-wmo-PLTi_8mwPiMI8Aew33EXvHU&callback=initMap"
+    async defer></script>
+	
+	
+</body>
+
+</html>
